@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Deployment Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">WebDeploy</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <nav id="mainNav">
+                <a href="#home" class="nav-link active" data-translate="nav_home">Home</a>
+                <a href="#basics" class="nav-link" data-translate="nav_basics">Basics</a>
+                <a href="#tutorials" class="nav-link" data-translate="nav_tutorials">Tutorials</a>
+                <a href="#advanced" class="nav-link" data-translate="nav_advanced">Advanced</a>
+                <a href="#docs" class="nav-link" data-translate="nav_docs">Docs</a>
+                <a href="#practice" class="nav-link" data-translate="nav_practice">Practice</a>
+                <a href="#quiz" class="nav-link" data-translate="nav_quiz">Quiz</a>
+                <a href="#about" class="nav-link" data-translate="nav_about">About</a>
+                <button class="lang-switcher" onclick="toggleLanguage()">
+                    <span id="langText">TM</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1 data-translate="hero_title">Web App Deployment Tutorial</h1>
+        <p data-translate="hero_subtitle">Learn how to deploy your web applications to the cloud with step-by-step
+            tutorials in English and Turkmen</p>
+        <a href="#basics" class="cta-button" data-translate="hero_cta">Start Learning</a>
+    </section>
+
+    <!-- Feature Cards -->
+    <div class="feature-cards">
+        <div class="feature-card">
+
+            <h3 data-translate="feature_beginner_title">Beginner</h3>
+            <p data-translate="feature_beginner_desc">Start from the basics with simple, easy-to-follow tutorials</p>
+        </div>
+        <div class="feature-card">
+
+            <h3 data-translate="feature_intermediate_title">Intermediate</h3>
+            <p data-translate="feature_intermediate_desc">Advance your skills with real-world deployment scenarios</p>
+        </div>
+        <div class="feature-card">
+
+            <h3 data-translate="feature_advanced_title">Advanced</h3>
+            <p data-translate="feature_advanced_desc">Master deployment with Docker, CI/CD, and cloud services</p>
+        </div>
+    </div>
+
+    <!-- Deployment Basics Section -->
+    <section id="basics">
+        <h2 data-translate="basics_title">Deployment Basics</h2>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span><span data-translate="basics_what_title">What is Deployment?</span></span>
+
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_what_content">Deployment is the process of making your web application
+                    available on the internet so users can access it. It involves uploading your code to a server,
+                    configuring it properly, and ensuring it runs smoothly for all visitors.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span> <span data-translate="basics_why_title">Why Deploy Web Apps?</span></span>
+
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_why_content">Deploying web applications allows you to share your work with the
+                    world, reach users globally, and provide 24/7 accessibility. It's essential for businesses,
+                    portfolios, and any project meant for public use.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span><span data-translate="basics_hosting_title">Hosting</span></span>
+
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_hosting_content">Hosting is a service that stores your website files on
+                    powerful computers called servers. These servers are connected to the internet and make your website
+                    accessible to anyone, anywhere, at any time.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span><span data-translate="basics_servers_title">Servers</span></span>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_servers_content">A server is a powerful computer that stores and delivers your
+                    website content to users. When someone types your website address, the server sends all the
+                    necessary files to their browser to display your site.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span> <span data-translate="basics_domain_title">Domain & DNS</span></span>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_domain_content">A domain is your website's address (like example.com). DNS
+                    (Domain Name System) translates this human-readable address into an IP address that computers use to
+                    locate your server.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span><span data-translate="basics_static_title">Static vs Dynamic Websites</span></span>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th data-translate="table_feature">Feature</th>
+                            <th data-translate="table_static">Static</th>
+                            <th data-translate="table_dynamic">Dynamic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-translate="table_content">Content</td>
+                            <td data-translate="table_static_content">Fixed HTML/CSS/JS</td>
+                            <td data-translate="table_dynamic_content">Server-generated</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_database">Database</td>
+                            <td data-translate="table_static_db">Not required</td>
+                            <td data-translate="table_dynamic_db">Usually required</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_speed">Speed</td>
+                            <td data-translate="table_static_speed">Very fast</td>
+                            <td data-translate="table_dynamic_speed">Depends on server</td>
+                        </tr>
+                        <tr>
+                            <td data-translate="table_cost">Cost</td>
+                            <td data-translate="table_static_cost">Low</td>
+                            <td data-translate="table_dynamic_cost">Higher</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span><span data-translate="basics_frontend_title">Frontend vs Backend Deployment</span></span>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <p data-translate="basics_frontend_content"><strong>Frontend:</strong> Deploying the user interface
+                    (HTML, CSS, JavaScript) that users see and interact with. Usually simpler and faster.</p>
+                <p data-translate="basics_backend_content"><strong>Backend:</strong> Deploying server-side code,
+                    databases, and APIs. Requires more configuration and resources.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials">
+        <h2 data-translate="tutorials_title">Step-by-Step Tutorials</h2>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(0)" data-translate="tab_frontend">Frontend
+                Deployment</button>
+            <button class="tab-btn" onclick="switchTab(1)" data-translate="tab_backend">Backend Deployment</button>
+        </div>
+
+        <!-- Frontend Tutorials -->
+        <div class="tab-content active">
+            <div class="tutorial-grid">
+                <!-- Netlify Tutorial -->
+                <div class="tutorial-card">
+                    <h3 data-translate="netlify_title">Deploy HTML/CSS/JS on Netlify</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="netlify_step1">Step 1: Create Netlify Account</strong>
+                        <p data-translate="netlify_step1_desc">Visit netlify.com and sign up with your GitHub, GitLab,
+                            or email account.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="netlify_step2">Step 2: Prepare Your Project</strong>
+                        <p data-translate="netlify_step2_desc">Ensure your project has an index.html file in the root
+                            directory.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My App&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="netlify_step3">Step 3: Deploy</strong>
+                        <p data-translate="netlify_step3_desc">Drag and drop your project folder into Netlify dashboard
+                            or connect your Git repository.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="netlify_step4">Step 4: Configure Settings</strong>
+                        <p data-translate="netlify_step4_desc">Set build command (if needed) and publish directory. For
+                            static sites, usually no build command is needed.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="netlify_step5">Step 5: Get Live URL</strong>
+                        <p data-translate="netlify_step5_desc">Netlify will provide a free URL like
+                            yoursite.netlify.app. You can customize it or add a custom domain.</p>
+                    </div>
+                </div>
+
+                <!-- Vercel Tutorial -->
+                <div class="tutorial-card">
+                    <h3 data-translate="vercel_title">Deploy React on Vercel</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="vercel_step1">Step 1: Install Vercel CLI</strong>
+                        <p data-translate="vercel_step1_desc">Open terminal and install Vercel command-line tool
+                            globally.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>npm install -g vercel</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="vercel_step2">Step 2: Create React App</strong>
+                        <p data-translate="vercel_step2_desc">Use Vite to create a new React application.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>npm create vite@latest my-app -- --template react
+cd my-app
+npm install</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="vercel_step3">Step 3: Build Your App</strong>
+                        <p data-translate="vercel_step3_desc">Create a production build of your React application.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>npm run build</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="vercel_step4">Step 4: Deploy to Vercel</strong>
+                        <p data-translate="vercel_step4_desc">Run the vercel command and follow the prompts.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>vercel</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="vercel_step5">Step 5: Access Live Site</strong>
+                        <p data-translate="vercel_step5_desc">Vercel will provide a production URL. Every push to main
+                            branch will auto-deploy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backend Tutorials -->
+        <div class="tab-content">
+            <div class="tutorial-grid">
+                <!-- Render Tutorial -->
+                <div class="tutorial-card">
+                    <h3 data-translate="render_title">Deploy Node.js on Render</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step1">Step 1: Create Render Account</strong>
+                        <p data-translate="render_step1_desc">Sign up at render.com with GitHub or email.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step2">Step 2: Prepare Node.js App</strong>
+                        <p data-translate="render_step2_desc">Create a basic Express.js server.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>const express = require(`express`);
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get(`/`, (req, res) => {
+  res.send(`Hello from Render!`);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step3">Step 3: Add package.json</strong>
+                        <p data-translate="render_step3_desc">Ensure your package.json has a start script.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step4">Step 4: Connect Repository</strong>
+                        <p data-translate="render_step4_desc">Push code to GitHub and connect it in Render dashboard.
+                        </p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step5">Step 5: Configure Environment</strong>
+                        <p data-translate="render_step5_desc">Set build command: npm install. Set start command: npm
+                            start. Add environment variables if needed.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="render_step6">Step 6: Deploy</strong>
+                        <p data-translate="render_step6_desc">Click deploy and Render will build and host your Node.js
+                            app with a free URL.</p>
+                    </div>
+                </div>
+
+                <!-- Railway Tutorial -->
+                <div class="tutorial-card">
+                    <h3 data-translate="railway_title">Deploy Python Flask on Railway</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step1">Step 1: Create Flask App</strong>
+                        <p data-translate="railway_step1_desc">Create a simple Flask application.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>from flask import Flask
+import os
+
+app = Flask(__name__)
+
+@app.route(`/`)
+def hello():
+    return `Hello from Railway!`
+
+if __name__ == `__main__`:
+    port = int(os.environ.get(`PORT`, 5000))
+    app.run(host=`0.0.0.0`, port=port)</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step2">Step 2: Create requirements.txt</strong>
+                        <p data-translate="railway_step2_desc">List all Python dependencies.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>Flask==2.3.0
+gunicorn==20.1.0</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step3">Step 3: Create Procfile</strong>
+                        <p data-translate="railway_step3_desc">Tell Railway how to run your app.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>web: gunicorn app:app</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step4">Step 4: Deploy on Railway</strong>
+                        <p data-translate="railway_step4_desc">Sign up at railway.app, create new project, and connect
+                            your GitHub repository.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step5">Step 5: Configure Settings</strong>
+                        <p data-translate="railway_step5_desc">Railway auto-detects Python. Add environment variables in
+                            settings if needed.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="railway_step6">Step 6: Access Your App</strong>
+                        <p data-translate="railway_step6_desc">Railway provides a public URL. Your Flask app is now
+                            live!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Topics Section -->
+    <section id="advanced">
+        <h2 data-translate="advanced_title">Advanced Concepts</h2>
+
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="docker_title">Docker Basics</h4>
+                <p data-translate="docker_desc">Containers package your app with all dependencies, ensuring it runs the
+                    same everywhere.</p>
+                <div class="code-block" style="margin-top: 1rem; text-align: left;">
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <pre>FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]</pre>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="cicd_title">CI/CD Pipeline</h4>
+                <p data-translate="cicd_desc">Continuous Integration/Deployment automates testing and deployment.</p>
+                <div style="margin-top: 1rem; text-align: left;">
+                    <strong data-translate="cicd_workflow">Workflow:</strong>
+                    <p data-translate="cicd_steps">Code → Test → Build → Deploy</p>
+                    <p style="margin-top: 0.5rem;"><strong data-translate="cicd_tools">Tools:</strong></p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>GitHub Actions</li>
+                        <li>GitLab CI</li>
+                        <li>Jenkins</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="cloud_title">Cloud Services</h4>
+                <table class="comparison-table" style="margin-top: 1rem; font-size: 0.85rem;">
+                    <thead>
+                        <tr>
+                            <th data-translate="cloud_provider">Provider</th>
+                            <th data-translate="cloud_best">Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AWS</td>
+                            <td data-translate="cloud_aws">Enterprise apps</td>
+                        </tr>
+                        <tr>
+                            <td>Google Cloud</td>
+                            <td data-translate="cloud_gcp">ML/AI projects</td>
+                        </tr>
+                        <tr>
+                            <td>DigitalOcean</td>
+                            <td data-translate="cloud_do">Developers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs">
+        <h2 data-translate="docs_title">Complete Documentation</h2>
+
+        <div class="doc-layout">
+            <aside class="doc-sidebar">
+                <h3 data-translate="docs_toc">Table of Contents</h3>
+                <ul>
+                    <li><a href="#doc-overview" data-translate="docs_overview">Overview</a></li>
+                    <li><a href="#doc-terminology" data-translate="docs_terminology">Key Terminology</a></li>
+                    <li><a href="#doc-workflow" data-translate="docs_workflow">Deployment Workflow</a></li>
+                    <li><a href="#doc-platforms" data-translate="docs_platforms">Platform Guides</a></li>
+                </ul>
+            </aside>
+
+            <div class="doc-content">
+                <div id="doc-overview">
+                    <h3 data-translate="docs_overview_title">Overview</h3>
+                    <p data-translate="docs_overview_what">Deployment is the process of making your web application
+                        accessible on the internet. It transforms your local development code into a live, publicly
+                        accessible website or application.</p>
+
+                    <h4 data-translate="docs_overview_why">Why It's Important</h4>
+                    <ul>
+                        <li data-translate="docs_overview_reason1">Makes your work accessible to users worldwide</li>
+                        <li data-translate="docs_overview_reason2">Enables 24/7 availability</li>
+                        <li data-translate="docs_overview_reason3">Provides professional hosting infrastructure</li>
+                        <li data-translate="docs_overview_reason4">Allows for scaling as your user base grows</li>
+                    </ul>
+
+                    <h4 data-translate="docs_overview_examples">Real-World Examples</h4>
+                    <p data-translate="docs_overview_examples_desc">Companies like Netflix, Facebook, and e-commerce
+                        sites deploy thousands of times daily using automated CI/CD pipelines.</p>
+                </div>
+
+                <div id="doc-terminology" style="margin-top: 3rem;">
+                    <h3 data-translate="docs_terminology_title">Key Terminology</h3>
+
+                    <dl>
+                        <div class="glossary-term">
+                            <dt data-translate="term_hosting">Hosting</dt>
+                            <dd data-translate="term_hosting_def">A service that stores your website files on servers
+                                connected to the internet, making them accessible to visitors.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_server">Server</dt>
+                            <dd data-translate="term_server_def">A powerful computer that stores and delivers your web
+                                content to users when they visit your site.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_build">Build</dt>
+                            <dd data-translate="term_build_def">The process of converting your source code into
+                                optimized files ready for production deployment.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_domain">Domain</dt>
+                            <dd data-translate="term_domain_def">Your website's address on the internet (e.g.,
+                                example.com).</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_dns">DNS (Domain Name System)</dt>
+                            <dd data-translate="term_dns_def">Translates human-readable domain names into IP addresses
+                                that computers use to locate servers.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_https">HTTP/HTTPS</dt>
+                            <dd data-translate="term_https_def">Protocols for transferring web data. HTTPS is the
+                                secure, encrypted version.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_env">Environment Variables</dt>
+                            <dd data-translate="term_env_def">Configuration values stored securely outside your code
+                                (API keys, database URLs, etc.).</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_cicd">CI/CD</dt>
+                            <dd data-translate="term_cicd_def">Continuous Integration/Continuous Deployment - automated
+                                testing and deployment processes.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_static">Static Website</dt>
+                            <dd data-translate="term_static_def">Pre-built HTML, CSS, and JavaScript files served
+                                directly to users without server processing.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_dynamic">Dynamic Website</dt>
+                            <dd data-translate="term_dynamic_def">Content generated by server-side code based on user
+                                requests and database data.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_backend">Backend</dt>
+                            <dd data-translate="term_backend_def">Server-side application logic, databases, and APIs
+                                that power your application.</dd>
+                        </div>
+
+                        <div class="glossary-term">
+                            <dt data-translate="term_frontend">Frontend</dt>
+                            <dd data-translate="term_frontend_def">The client-side user interface that users see and
+                                interact with in their browsers.</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div id="doc-workflow" style="margin-top: 3rem;">
+                    <h3 data-translate="docs_workflow_title">Deployment Workflow</h3>
+                    <div class="workflow">
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_code">1. Code</h4>
+                            <p data-translate="workflow_code_desc">Write your application</p>
+                        </div>
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_build">2. Build</h4>
+                            <p data-translate="workflow_build_desc">Compile and optimize</p>
+                        </div>
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_config">3. Configure</h4>
+                            <p data-translate="workflow_config_desc">Set environment vars</p>
+                        </div>
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_deploy">4. Deploy</h4>
+                            <p data-translate="workflow_deploy_desc">Upload to hosting</p>
+                        </div>
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_publish">5. Publish</h4>
+                            <p data-translate="workflow_publish_desc">Make live to users</p>
+                        </div>
+                        <div class="workflow-step">
+                            <h4 data-translate="workflow_monitor">6. Monitor</h4>
+                            <p data-translate="workflow_monitor_desc">Track performance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="doc-platforms" style="margin-top: 3rem;">
+                    <h3 data-translate="docs_platforms_title">Platform Documentation</h3>
+
+                    <div class="platform-grid">
+                        <div class="platform-card">
+                            <h4>Netlify</h4>
+                            <p data-translate="platform_netlify">Drag & drop deployment, automatic builds from Git,
+                                generous free tier, perfect for static sites.</p>
+                        </div>
+
+                        <div class="platform-card">
+                            <h4>Vercel</h4>
+                            <p data-translate="platform_vercel">Optimized for React/Next.js, edge network for fast
+                                global delivery, automatic HTTPS.</p>
+                        </div>
+
+                        <div class="platform-card">
+                            <h4>Render</h4>
+                            <p data-translate="platform_render">Full-stack hosting with databases, auto-deploy from Git,
+                                free SSL certificates.</p>
+                        </div>
+
+                        <div class="platform-card">
+                            <h4>Railway</h4>
+                            <p data-translate="platform_railway">Simple pricing, PostgreSQL support, easy environment
+                                management.</p>
+                        </div>
+
+                        <div class="platform-card">
+                            <h4>AWS</h4>
+                            <p data-translate="platform_aws">Enterprise-grade infrastructure, extensive services,
+                                scalable for any size project.</p>
+                        </div>
+
+                        <div class="platform-card">
+                            <h4>DigitalOcean</h4>
+                            <p data-translate="platform_do">Developer-friendly, droplets (virtual servers), transparent
+                                pricing, great documentation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Tasks Section -->
+    <section id="practice">
+        <h2 data-translate="practice_title">Hands-On Practice</h2>
+
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox" id="task1" onchange="saveTaskProgress()">
+                <div class="task-content">
+                    <h4 data-translate="task1_title">Deploy your first HTML project on Netlify</h4>
+                    <p class="task-hint" data-translate="task1_hint">Hint: Create index.html with basic content</p>
+                    <p data-translate="task1_resource">Resource: <a href="https://netlify.com"
+                            target="_blank">netlify.com</a></p>
+                </div>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox" id="task2" onchange="saveTaskProgress()">
+                <div class="task-content">
+                    <h4 data-translate="task2_title">Deploy a Node.js backend on Render</h4>
+                    <p class="task-hint" data-translate="task2_hint">Hint: Use Express.js starter template</p>
+                    <p data-translate="task2_resource">Resource: <a href="https://render.com/docs"
+                            target="_blank">render.com/docs</a></p>
+                </div>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox" id="task3" onchange="saveTaskProgress()">
+                <div class="task-content">
+                    <h4 data-translate="task3_title">Connect a database to deployed app</h4>
+                    <p class="task-hint" data-translate="task3_hint">Hint: Use environment variables for connection
+                        string</p>
+                    <p data-translate="task3_resource">Resource: Learn about PostgreSQL or MongoDB</p>
+                </div>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox" id="task4" onchange="saveTaskProgress()">
+                <div class="task-content">
+                    <h4 data-translate="task4_title">Set up custom domain</h4>
+                    <p class="task-hint" data-translate="task4_hint">Hint: Configure DNS settings</p>
+                    <p data-translate="task4_resource">Resource: Domain registrar documentation</p>
+                </div>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox" class="task-checkbox" id="task5" onchange="saveTaskProgress()">
+                <div class="task-content">
+                    <h4 data-translate="task5_title">Implement CI/CD pipeline</h4>
+                    <p class="task-hint" data-translate="task5_hint">Hint: Use GitHub Actions</p>
+                    <p data-translate="task5_resource">Resource: <a href="https://github.com/features/actions"
+                            target="_blank">github.com/features/actions</a></p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2 data-translate="quiz_title">Test Your Knowledge</h2>
+
+        <div class="quiz-container">
+            <div id="quizContent">
+                <!-- Quiz questions will be inserted here by JavaScript -->
+            </div>
+
+            <div class="quiz-nav">
+                <button class="quiz-btn" id="prevBtn" onclick="previousQuestion()" style="display: none;"
+                    data-translate="quiz_prev">Previous</button>
+                <button class="quiz-btn" id="nextBtn" onclick="nextQuestion()" data-translate="quiz_next">Next</button>
+                <button class="quiz-btn" id="submitBtn" onclick="submitQuiz()" style="display: none;"
+                    data-translate="quiz_submit">Submit Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 data-translate="about_title">About This Tutorial</h2>
+
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="about_purpose_title">Purpose</h4>
+                <p data-translate="about_purpose_desc">This web application is designed to teach web deployment concepts
+                    from complete beginners to advanced developers through a practical, hands-on learning approach.</p>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="about_who_title">Who Is This For?</h4>
+                <ul style="text-align: left; margin-left: 1.5rem;">
+                    <li data-translate="about_who1">Students learning web development</li>
+                    <li data-translate="about_who2">Developers new to deployment</li>
+                    <li data-translate="about_who3">Anyone wanting to publish websites</li>
+                    <li data-translate="about_who4">Turkmen-speaking learners worldwide</li>
+                </ul>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="about_outcomes_title">Learning Outcomes</h4>
+                <p data-translate="about_outcomes_desc">After completing this tutorial, you will:</p>
+                <ul style="text-align: left; margin-left: 1.5rem;">
+                    <li data-translate="about_outcome1">Understand deployment fundamentals</li>
+                    <li data-translate="about_outcome2">Deploy frontend applications confidently</li>
+                    <li data-translate="about_outcome3">Deploy backend services with databases</li>
+                    <li data-translate="about_outcome4">Use modern hosting platforms</li>
+                    <li data-translate="about_outcome5">Implement CI/CD pipelines</li>
+                </ul>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="about_how_title">How to Use</h4>
+                <ol style="text-align: left; margin-left: 1.5rem;">
+                    <li data-translate="about_how1">Start with Deployment Basics</li>
+                    <li data-translate="about_how2">Follow step-by-step tutorials</li>
+                    <li data-translate="about_how3">Complete practice tasks</li>
+                    <li data-translate="about_how4">Test knowledge with quiz</li>
+                    <li data-translate="about_how5">Refer to documentation anytime</li>
+                </ol>
+            </div>
+
+            <div class="platform-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+                <h4 data-translate="about_lang_title">Languages</h4>
+                <p data-translate="about_lang_desc">Full bilingual support: English & Turkmen. Switch languages anytime
+                    with the top-right button. All content professionally translated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+
+</body>
+
+</html>

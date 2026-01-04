@@ -1,12 +1,12 @@
- *{
+ * {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
  }
 
  :root {
-    --primary-blue: #e24ad0;
-    --success-green: #50a2c8;
+     --primary-blue: #e24ad0;
+     --success-green: #50a2c8;
      /* --primary-blue: #4A90E2; */
      /* --success-green: #50C878; */
      --bg-white: #FFFFFF;
@@ -32,7 +32,7 @@
      right: 0;
      background: var(--bg-white);
      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-     z-index: 1000;
+     z-index: 2000;
      transition: all 0.3s ease;
  }
 
@@ -65,6 +65,17 @@
      transition: color 0.3s ease;
      position: relative;
  }
+
+ nav a,
+ nav button {
+     color: var(--text-dark);
+     text-decoration: none;
+     font-weight: 500;
+     transition: color 0.3s ease;
+     position: relative;
+
+ }
+
 
  nav a:hover,
  nav a.active {
@@ -109,14 +120,21 @@
 
  /* Hero Section */
  .hero {
-     margin-top: 80px;
-     background: linear-gradient(135deg, #aa40c2 0%, #e054b3 100%);
+     min-height: calc(100vh - 80px);
+     /* ekranı doldursun */
+     padding-top: calc(80px + 3rem);
+     /* fixed header telafisi */
+     padding-bottom: 5rem;
+     padding-left: 2rem;
+     padding-right: 2rem;
 
-     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+     margin-top: 0;
+
+     background: linear-gradient(135deg, #aa40c2 0%, #e054b3 100%);
      color: white;
-     padding: 6rem 2rem;
      text-align: center;
  }
+
 
  .hero h1 {
      font-size: 3rem;
@@ -152,7 +170,7 @@
  /* Feature Cards */
  .feature-cards {
      max-width: 1200px;
-     margin: -3rem auto 4rem;
+     margin: 4rem auto;
      padding: 0 2rem;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -167,6 +185,19 @@
      text-align: center;
      transition: all 0.3s ease;
  }
+
+ .feature-card p {
+     color: #140303;
+     /* beyaz, gradient arka plan üzerinde görünür olur */
+     margin-top: 0.5rem;
+     font-size: 0.95rem;
+     line-height: 1.5;
+     /* daha okunaklı */
+     opacity: 0.9;
+     /* hafif şeffaflık ile yumuşak görünüm */
+ }
+
+
 
  .feature-card:hover {
      transform: translateY(-10px);
@@ -758,7 +789,7 @@
      }
  }
 
- 
+
 
  /* Tab System */
  .tabs {
@@ -793,3 +824,196 @@
      display: block;
      animation: fadeInUp 0.5s ease;
  }
+
+ .page {
+     display: none;
+ }
+
+ .page.active {
+     display: block;
+ }
+
+
+ /* Dark Mode Enhancements */
+ .dark {
+     --bg-white: #1a1a1a;
+     --bg-light: #2d2d2d;
+     --text-dark: #e0e0e0;
+     --border-light: #444;
+     --code-bg: #2d2d2d;
+ }
+
+ .dark .feature-card,
+ .dark .accordion-item,
+ .dark .tutorial-card,
+ .dark .task-item,
+ .dark .platform-card,
+ .dark .doc-content {
+     background: #242424;
+     border-color: #444;
+ }
+
+ .dark .accordion-header {
+     background: #2d2d2d;
+ }
+
+ .dark .quiz-option {
+     background: #2d2d2d;
+ }
+
+ .dark header {
+     background: #1a1a1a;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ }
+
+
+ /* ===============================
+   BASICS – PROFESSIONAL STYLING
+================================ */
+
+ .basics-page {
+     padding: 3rem 2rem;
+ }
+
+ .basics-grid {
+     margin-top: 3rem;
+ }
+
+ .basics-card {
+     background: linear-gradient(180deg,
+             var(--bg-white),
+             var(--bg-light));
+     border: 2px solid var(--border-light);
+     border-radius: 18px;
+     padding: 2rem;
+     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+     transition: all 0.35s ease;
+     position: relative;
+ }
+
+ .basics-card::before {
+     content: '';
+     position: absolute;
+     left: 0;
+     top: 0;
+     height: 100%;
+     width: 5px;
+     background: var(--primary-blue);
+     border-radius: 18px 0 0 18px;
+ }
+
+ .basics-card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+ }
+
+ .basics-card h3 {
+     font-size: 1.35rem;
+     margin-bottom: 0.8rem;
+     color: var(--primary-blue);
+ }
+
+ .basics-card p {
+     font-size: 0.98rem;
+     line-height: 1.7;
+     opacity: 0.92;
+ }
+
+ .basics-card ul,
+ .basics-card ol {
+     margin-top: 0.8rem;
+     margin-left: 1.2rem;
+ }
+
+ .basics-card li {
+     margin-bottom: 0.5rem;
+ }
+
+ .section-title {
+     font-size: 2.6rem;
+     margin-bottom: 1rem;
+ }
+
+ .section-intro {
+     max-width: 850px;
+     margin: 0 auto 3rem;
+     font-size: 1.05rem;
+     opacity: 0.85;
+ }
+ /* ===== COURSES – CLEAN DOCUMENTATION STYLE ===== */
+
+#courses {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+}
+
+/* page title */
+#courses h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.3px;
+}
+
+.courses-intro {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 3.2rem;
+    max-width: 720px;
+}
+
+/* section */
+.course-section {
+    margin-bottom: 4rem;
+}
+
+.course-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.course-section p {
+    font-size: 0.96rem;
+    color: #374151;
+    max-width: 720px;
+}
+
+/* list */
+.course-info {
+    margin-top: 1.3rem;
+    padding-left: 1.5rem;
+}
+
+.course-info li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #111827;
+}
+
+/* subtle divider */
+.course-section:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: 3rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.dark #courses h2,
+.dark .course-section h3 {
+    color: #f9fafb;
+}
+
+.dark .courses-intro,
+.dark .course-section p {
+    color: #9ca3af;
+}
+
+.dark .course-info li {
+    color: #e5e7eb;
+}
+
+.dark .course-section:not(:last-child)::after {
+    border-color: #1f2937;
+}

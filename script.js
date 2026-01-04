@@ -8,6 +8,7 @@ const translations = {
         nav_practice: `Practice`,
         nav_quiz: `Quiz`,
         nav_about: `About`,
+        nav_courses: "Courses",
 
         hero_title: `Web App Deployment Tutorial`,
         hero_subtitle: `Learn how to deploy your web applications to the cloud with step-by-step tutorials in English and Turkmen`,
@@ -55,6 +56,8 @@ const translations = {
         tutorials_title: `Step-by-Step Tutorials`,
         tab_frontend: `Frontend Deployment`,
         tab_backend: `Backend Deployment`,
+        tab_common_problems: `Common Problems`,
+
 
         netlify_title: `Deploy HTML/CSS/JS on Netlify`,
         netlify_step1: `Step 1: Create Netlify Account`,
@@ -67,6 +70,17 @@ const translations = {
         netlify_step4_desc: `Set build command (if needed) and publish directory. For static sites, usually no build command is needed.`,
         netlify_step5: `Step 5: Get Live URL`,
         netlify_step5_desc: `Netlify will provide a free URL like yoursite.netlify.app. You can customize it or add a custom domain.`,
+
+
+        flutter_title: `Deploy Flutter Web on Firebase Hosting`,
+        flutter_step1: `Step 1: Enable Flutter Web`,
+        flutter_step1_desc: `Make sure Flutter web support is enabled.`,
+        flutter_step2: `Step 2: Build Web Version`,
+        flutter_step2_desc: `Create a production-ready web build.`,
+        flutter_step3: `Step 3: Install Firebase CLI`,
+        flutter_step3_desc: `Install Firebase command-line tools.`,
+        flutter_step4: `Step 4: Deploy`,
+        flutter_step4_desc: `Initialize Firebase hosting and deploy.`,
 
         vercel_title: `Deploy React on Vercel`,
         vercel_step1: `Step 1: Install Vercel CLI`,
@@ -94,6 +108,25 @@ const translations = {
         render_step6: `Step 6: Deploy`,
         render_step6_desc: `Click deploy and Render will build and host your Node.js app with a free URL.`,
 
+        laravel_title: `Deploy Laravel on VPS (Ubuntu + Nginx)`,
+        laravel_step1: `Step 1: Install Required Packages`,
+        laravel_step1_desc: `Install PHP, Composer, and Nginx on your server.`,
+        laravel_step2: `Step 2: Install Composer`,
+        laravel_step3: `Step 3: Upload Laravel Project`,
+        laravel_step3_desc: `Clone your project from GitHub.`,
+        laravel_step4: `Step 4: Environment Setup`,
+        laravel_step4_desc: `Configure .env and generate app key.`,
+        laravel_step5: `Step 5: Configure Nginx`,
+        laravel_step5_desc: `Point Nginx root to /public directory.`,
+        laravel_step6: `Step 6: Go Live`,
+        laravel_step6_desc: `Your Laravel API is now accessible via your server IP or domain.`,
+
+
+        docker_step1: `Step 1: Create Dockerfile`,
+        docker_step2: `Step 2: Build Docker Image`,
+        docker_step3: `Step 3: Run Container`,
+
+
         railway_title: `Deploy Python Flask on Railway`,
         railway_step1: `Step 1: Create Flask App`,
         railway_step1_desc: `Create a simple Flask application.`,
@@ -107,6 +140,16 @@ const translations = {
         railway_step5_desc: `Railway auto-detects Python. Add environment variables in settings if needed.`,
         railway_step6: `Step 6: Access Your App`,
         railway_step6_desc: `Railway provides a public URL. Your Flask app is now live!`,
+
+
+        problems_title: `Common Deployment Problems`,
+        problem_port_title: `Port Not Open`,
+        problem_port_desc: `Make sure firewall allows your app port.`,
+        problem_env_title: `Environment Variables Missing`,
+        problem_env_desc: `Always check .env or platform environment settings.`,
+        problem_build_title: `Build Failed`,
+        problem_build_desc: `Check logs in deployment dashboard carefully.`,
+
 
         advanced_title: `Advanced Concepts`,
         docker_title: `Docker Basics`,
@@ -240,7 +283,31 @@ const translations = {
         about_lang_title: `Languages`,
         about_lang_desc: `Full bilingual support: English & Turkmen. Switch languages anytime with the top-right button. All content professionally translated.`,
 
-    
+        /* ===== COURSE DETAILS ===== */
+
+        beginner_section_title: `What you will learn`,
+        beginner_item_1: `HTML structure and basic elements`,
+        beginner_item_2: `CSS fundamentals and styling`,
+        beginner_item_3: `JavaScript basics`,
+        beginner_item_4: `What is a static website`,
+        beginner_item_5: `Basic hosting concepts`,
+        beginner_item_6: `Deploy your first site with Netlify`,
+
+        intermediate_section_title: `Skills you will gain`,
+        intermediate_item_1: `Connect frontend and backend`,
+        intermediate_item_2: `Deploy Node.js applications`,
+        intermediate_item_3: `Environment variables`,
+        intermediate_item_4: `Using databases in production`,
+        intermediate_item_5: `Basic CI/CD workflows`,
+
+        advanced_section_title: `Advanced topics`,
+        advanced_item_1: `Docker and containerization`,
+        advanced_item_2: `CI/CD pipelines (GitHub Actions, GitLab CI)`,
+        advanced_item_3: `Cloud deployment (AWS, DigitalOcean)`,
+        advanced_item_4: `Scaling and performance basics`,
+        advanced_item_5: `Security and production best practices`,
+
+
     },
     tm: {
         nav_home: `Baş sahypa`,
@@ -251,6 +318,7 @@ const translations = {
         nav_practice: `Praktika`,
         nav_quiz: `Test`,
         nav_about: `Barada`,
+        nav_courses: "Kurslar",
 
         hero_title: `Web Programmalaryny Ýerleşdirmek Boýunça Sapak`,
         hero_subtitle: `Iňlis we türkmen dillerinde ädimme-ädim sapaklarymyz bilen web programmalaryny buluda ýerleşdirmegi öwreniň`,
@@ -262,6 +330,33 @@ const translations = {
         feature_intermediate_desc: `Hakyky dünýä ýerleşdirme ssenariýalary bilen başarnygyňyzy ösdüriň`,
         feature_advanced_title: `Öňdebaryjy`,
         feature_advanced_desc: `Docker, CI/CD we bulut hyzmatlary bilen ýerleşdirmegi özleşdiriň`,
+        courses_beginner_title: `Başlangyç Kursy`,
+        courses_beginner_intro: `Bu bölümde web sahypa döretmegiň we ýerleşdirmegiň iň esasy düşünjelerini öwrenersiňiz.`,
+
+        beginner_step1_title: `HTML näme?`,
+        beginner_step1_desc: `HTML web sahypanyň skeletidir. Sahypadaky ähli mazmun HTML arkaly ýazylýar.`,
+
+        beginner_step2_title: `CSS näme?`,
+        beginner_step2_desc: `CSS web sahypanyň görnüşini we dizaýnyny dolandyrýar.`,
+
+        beginner_step3_title: `JavaScript näme?`,
+        beginner_step3_desc: `JavaScript web sahypany janlandyrýar we ulanyjy bilen özara täsir döredýär.`,
+
+        beginner_step4_title: `Statik Web Sahypa`,
+        beginner_step4_desc: `Statik web sahypalar diňe HTML, CSS we JavaScript-den durýar.`,
+
+        beginner_step5_title: `index.html Faýly`,
+        beginner_step5_desc: `index.html web sahypanyň esasy giriş nokadydyr.`,
+
+        beginner_step6_title: `Taslama Bukja Düzümi`,
+        beginner_step6_desc: `Dogry bukja gurluşy sahypany ýerleşdirmegi aňsatlaşdyrýar.`,
+
+        beginner_step7_title: `Build düşünjesi`,
+        beginner_step7_desc: `Build – sahypany ýerleşdirmäge taýýar etmek prosesi.`,
+
+        beginner_step8_title: `Ilkinji Web Sahypaňy Ýerleşdirmek`,
+        beginner_step8_desc: `Bu ädimde taýýar web sahypaňy internetde elýeterli edersiňiz.`,
+
 
         basics_title: `Ýerleşdirmegiň Esaslary`,
         basics_what_title: `Ýerleşdirmek näme?`,
@@ -298,6 +393,8 @@ const translations = {
         tutorials_title: `Ädimme-ädim Sapaklar`,
         tab_frontend: `Frontend Ýerleşdirmek`,
         tab_backend: `Backend Ýerleşdirmek`,
+        tab_common_problems: `Köp Duş Gelinýän Meseleler`,
+
 
         netlify_title: `HTML/CSS/JS-ni Netlify-da Ýerleşdirmek`,
         netlify_step1: `1-nji Ädim: Netlify Hasaby Dörediň`,
@@ -310,6 +407,17 @@ const translations = {
         netlify_step4_desc: `Gurluş buýrugyny (gerek bolsa) we neşir katalogyny belläň. Statik sahypalar üçin adatça gurluş buýrugy gerek däl.`,
         netlify_step5: `5-nji Ädim: Janly URL Alyň`,
         netlify_step5_desc: `Netlify mugt URL berer, mysal üçin yoursite.netlify.app. Ony özleşdirip ýa-da özboluşly domen goşup bilersiňiz.`,
+
+
+        flutter_title: `Flutter Web-i Firebase Hosting-de Ýerleşdirmek`,
+        flutter_step1: `1-nji Ädim: Flutter Web-i Işjeňleşdiriň`,
+        flutter_step1_desc: `Flutter web goldawynyň işjeňdigine göz ýetiriň.`,
+        flutter_step2: `2-nji Ädim: Web Wersiýasyny Guruň`,
+        flutter_step2_desc: `Önümçilik üçin taýýar web gurmasyny dörediň.`,
+        flutter_step3: `3-nji Ädim: Firebase CLI-ni Guruň`,
+        flutter_step3_desc: `Firebase buýruk setiri gurallaryny guruň.`,
+        flutter_step4: `4-nji Ädim: Ýerleşdiriň`,
+        flutter_step4_desc: `Firebase hosting-i başlap, sahypany ýerleşdiriň.`,
 
         vercel_title: `React-ny Vercel-de Ýerleşdirmek`,
         vercel_step1: `1-nji Ädim: Vercel CLI-ni Guruň`,
@@ -336,6 +444,25 @@ const translations = {
         render_step5_desc: `Gurluş buýrugyny belläň: npm install. Başlangyç buýrugyny belläň: npm start. Gerek bolsa daşky gurşaw üýtgeýjilerini goşuň.`,
         render_step6: `6-njy Ädim: Ýerleşdiriň`,
         render_step6_desc: `Ýerleşdir düwmesine basyň we Render mugt URL bilen Node.js programmanyňyzy gurar we ýerleşdirer.`,
+        laravel_title: `Laravel-i VPS-de Ýerleşdirmek (Ubuntu + Nginx)`,
+
+        laravel_step1: `1-nji Ädim: Zerur Paketleri Guruň`,
+        laravel_step1_desc: `Serweriňizde PHP, Composer we Nginx guruň.`,
+        laravel_step2: `2-nji Ädim: Composer-i Guruň`,
+        laravel_step3: `3-nji Ädim: Laravel Taslamasyny Ýükleň`,
+        laravel_step3_desc: `Taslamaňyzy GitHub-dan klonlaň.`,
+        laravel_step4: `4-nji Ädim: Daşky Gurşawy Sazlaň`,
+        laravel_step4_desc: `.env faýlyny sazlaň we app açaryny dörediň.`,
+        laravel_step5: `5-nji Ädim: Nginx-i Sazlaň`,
+        laravel_step5_desc: `Nginx kök ýoluny /public bukjasyna görkeziň.`,
+        laravel_step6: `6-njy Ädim: Onlaýn Geçiň`,
+        laravel_step6_desc: `Laravel API indi serwer IP ýa-da domeniňiz arkaly elýeterlidir.`,
+
+
+        docker_step1: `1-nji Ädim: Dockerfile Dörediň`,
+        docker_step2: `2-nji Ädim: Docker Image Gurun`,
+        docker_step3: `3-nji Ädim: Konteýneri Işlediň`,
+
 
         railway_title: `Python Flask-ny Railway-de Ýerleşdirmek`,
         railway_step1: `1-nji Ädim: Flask Programmasy Dörediň`,
@@ -350,6 +477,23 @@ const translations = {
         railway_step5_desc: `Railway Python-y awtomatiki kesgitleýär. Gerek bolsa sazlamalarda daşky gurşaw üýtgeýjilerini goşuň.`,
         railway_step6: `6-njy Ädim: Programmanyňyza Giriň`,
         railway_step6_desc: `Railway köpçülige açyk URL berýär. Flask programmanyňyz indi janly!`,
+
+
+        problems_title: `Ýerleşdirme Wagtynda Ýygy Ýetip Gelýän Meseleler`,
+        problem_port_title: `Port Açyk Däl`,
+        problem_port_desc: `Firewall-yň programma portuňyza rugsat berýändigine göz ýetiriň.`,
+        problem_env_title: `Environment Üýtgeýjiler Ýok`,
+        problem_env_desc: `Hemişe .env faýlyny ýa-da platformanyň sazlamalaryny barlaň.`,
+        problem_build_title: `Build Şowsuz`,
+        problem_build_desc: `Ýerleşdirme panelindäki loglary üns bilen barlaň.`,
+
+
+
+
+
+
+
+
 
         advanced_title: `Öňdebaryjy Düşünjeler`,
         docker_title: `Docker Esaslary`,
@@ -483,7 +627,31 @@ const translations = {
         about_lang_title: `Diller`,
         about_lang_desc: `Doly iki dilli goldaw: Iňlis we Türkmen. Ýokarky sag düwme bilen islendik wagt dilleri çalşyň. Ähli mazmun hünärmen tarapyndan terjime edildi.`,
 
-   
+        /* ===== COURSE DETAILS ===== */
+
+        beginner_section_title: `Näme öwrenersiň`,
+        beginner_item_1: `HTML gurluşy we esasy elementler`,
+        beginner_item_2: `CSS esasy stil beriş`,
+        beginner_item_3: `JavaScript giriş`,
+        beginner_item_4: `Statik web sahypasy näme`,
+        beginner_item_5: `Hosting esasy düşünjeler`,
+        beginner_item_6: `Netlify bilen ilkinji ýerleşdiriş`,
+
+        intermediate_section_title: `Gazanjak başarnyklaryň`,
+        intermediate_item_1: `Frontend bilen backend baglanyşygy`,
+        intermediate_item_2: `Node.js programmalaryny ýerleşdirmek`,
+        intermediate_item_3: `Environment variables ulanmak`,
+        intermediate_item_4: `Database bilen işlemek`,
+        intermediate_item_5: `Esasy CI/CD akymlary`,
+
+        advanced_section_title: `Ösen mowzuklar`,
+        advanced_item_1: `Docker we konteýnerleşdiriş`,
+        advanced_item_2: `CI/CD pipeline (GitHub Actions, GitLab CI)`,
+        advanced_item_3: `Cloud ýerleşdiriş (AWS, DigitalOcean)`,
+        advanced_item_4: `Ölçeglendiriş we öndürijilik`,
+        advanced_item_5: `Howpsuzlyk we production düzgünleri`,
+
+
     }
 };
 
@@ -752,21 +920,38 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
 // Language Toggle
 function toggleLanguage() {
-    currentLang = currentLang === `en` ? `tm` : `en`;
-    document.getElementById(`langText`).textContent = currentLang === `en` ? `TM` : `EN`;
-    updateLanguage();
-    initQuiz();
+    currentLang = currentLang === 'en' ? 'tm' : 'en';
+    updateLanguage(); // önce dili güncelle
+    document.getElementById('langText').textContent = currentLang.toUpperCase(); // TM veya EN
+    initQuiz(); // quiz'i de güncelle
 }
 
 function updateLanguage() {
-    const elements = document.querySelectorAll(`[data-translate]`);
+    const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(el => {
-        const key = el.getAttribute(`data-translate`);
-        if (translations[currentLang][key]) {
+        const key = el.getAttribute('data-translate');
+        if (translations[currentLang] && translations[currentLang][key]) {
             el.textContent = translations[currentLang][key];
         }
     });
 }
+
+
+
+function copyCode(btn) {
+    const pre = btn.nextElementSibling;
+    if (!pre) return;
+
+    const text = pre.innerText;
+
+    navigator.clipboard.writeText(text).then(() => {
+        btn.innerText = 'Copied!';
+        setTimeout(() => {
+            btn.innerText = 'Copy';
+        }, 1500);
+    });
+}
+
 
 // Accordion
 function toggleAccordion(header) {
@@ -802,19 +987,8 @@ function switchTab(index) {
     currentTab = index;
 }
 
-// Code Copy
-function copyCode(btn) {
-    const codeBlock = btn.nextElementSibling;
-    const code = codeBlock.textContent;
 
-    navigator.clipboard.writeText(code).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = currentLang === `en` ? `Copied!` : `Göçürildi!`;
-        setTimeout(() => {
-            btn.textContent = originalText;
-        }, 2000);
-    });
-}
+
 
 // Task Progress
 function saveTaskProgress() {
@@ -973,53 +1147,165 @@ function setupScrollEffects() {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: `smooth` });
 }
+function navigateTo(pageId) {
+    // hide all pages
+    document.querySelectorAll('.page').forEach(p =>
+        p.classList.remove('active')
+    );
 
-// Navigation
-function setupNavigation() {
-    const navLinks = document.querySelectorAll(`.nav-link`);
+    // show target page
+    const target = document.getElementById(pageId);
+    if (target) {
+        target.classList.add('active');
+    }
 
-    navLinks.forEach(link => {
-        link.addEventListener(`click`, (e) => {
-            e.preventDefault();
-            const target = link.getAttribute(`href`);
-            const element = document.querySelector(target);
+    // reset scroll (IMPORTANT)
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 
-            if (element) {
-                const offset = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
+    // update navbar active state
+    document.querySelectorAll('.nav-link').forEach(btn =>
+        btn.classList.remove('active')
+    );
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: `smooth`
-                });
-            }
-
-            navLinks.forEach(l => l.classList.remove(`active`));
-            link.classList.add(`active`);
-
-            const nav = document.getElementById(`mainNav`);
-            nav.classList.remove(`active`);
-        });
-    });
-
-    window.addEventListener(`scroll`, () => {
-        let current = ``;
-        const sections = document.querySelectorAll(`section`);
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute(`id`);
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove(`active`);
-            if (link.getAttribute(`href`) === `#` + current) {
-                link.classList.add(`active`);
-            }
-        });
-    });
+    const activeBtn = document.querySelector(
+        `.nav-link[data-page="${pageId}"]`
+    );
+    if (activeBtn) activeBtn.classList.add('active');
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // bind navbar
+    document.querySelectorAll('.nav-link[data-page]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigateTo(btn.dataset.page);
+        });
+    });
+
+    navigateTo('home');
+});
+document.querySelectorAll('.nav-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+        navigateTo(btn.dataset.page);
+
+        // mobile menu kapansın
+        document.getElementById('mainNav').classList.remove('active');
+    });
+});
+
+function navigateToCourse(level) {
+    document.querySelectorAll('.page').forEach(p => {
+        p.classList.remove('active');
+    });
+
+    const coursesPage = document.getElementById('courses');
+    if (!coursesPage) return;
+    coursesPage.classList.add('active');
+
+    const sections = ['beginner-course', 'intermediate-course', 'advanced-course'];
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    });
+
+    const target = document.getElementById(`${level}-course`);
+    if (target) target.style.display = 'block';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    document.querySelectorAll('.nav-link').forEach(btn =>
+        btn.classList.remove('active')
+    );
+
+    const coursesBtn = document.querySelector('.nav-link[data-page="courses"]');
+    if (coursesBtn) coursesBtn.classList.add('active');
+}
+
+
+
+// Dark Mode
+function toggleDarkMode() {
+    const html = document.documentElement;
+    const isDark = html.classList.toggle('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    document.getElementById('darkModeIcon').textContent = isDark ? '☀️' : '🌙';
+}
+
+// Load dark mode preference
+function loadDarkMode() {
+    const saved = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = saved === 'enabled' || (saved === null && prefersDark);
+
+    if (shouldBeDark) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('darkModeIcon').textContent = '☀️';
+    } else {
+        document.getElementById('darkModeIcon').textContent = '🌙';
+    }
+}
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateLanguage();
+    loadTaskProgress();
+    initQuiz();
+    setupScrollEffects();
+    setupNavigation();
+    loadDarkMode(); // Tema durumunu uygula
+
+    // Navbar linklerine mobil kapa fonksiyonu ekle
+    document.querySelectorAll('.nav-link[data-page]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const page = btn.dataset.page;
+
+            if (page === 'courses') {
+                e.preventDefault(); // don’t run the default navigateTo
+                showAllCourses();   // show all courses
+            } else {
+                navigateTo(page);   // normal navigation
+            }
+
+            // close mobile menu (optional)
+            document.getElementById('mainNav').classList.remove('active');
+        });
+    });
+
+
+    // Başlangıç sayfası
+    document.getElementById('langText').textContent = currentLang.toUpperCase();
+    navigateTo('home');
+});
+function showAllCourses() {
+    // Hide all other pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+    // Show the Courses page
+    document.getElementById('courses').classList.add('active');
+
+    // Show all course cards
+    document.getElementById('beginner-course').style.display = 'block';
+    document.getElementById('intermediate-course').style.display = 'block';
+    document.getElementById('advanced-course').style.display = 'block';
+
+    // Update navbar active class
+    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+    const coursesBtn = document.querySelector('.nav-link[data-page="courses"]');
+    if (coursesBtn) coursesBtn.classList.add('active');
+
+    // Scroll to top for UX
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+
+
+
+
+

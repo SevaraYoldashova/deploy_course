@@ -7,189 +7,206 @@
     <title>Web App Deployment Tutorial</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css"
+        media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+        media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="style.css">
+    <script defer>
+        hljs.highlightAll();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
 
 
 </head>
 
 <body>
     <!-- Header -->
+    <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#home" class="logo">WebDeploy</a>
+            <button class="logo" data-page="home">WebDeploy</button>
+
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-            <nav id="mainNav">
-                <a href="#home" class="nav-link active" data-translate="nav_home">Home</a>
-                <a href="#basics" class="nav-link" data-translate="nav_basics">Basics</a>
-                <a href="#tutorials" class="nav-link" data-translate="nav_tutorials">Tutorials</a>
-                <a href="#advanced" class="nav-link" data-translate="nav_advanced">Advanced</a>
-                <a href="#docs" class="nav-link" data-translate="nav_docs">Docs</a>
-                <a href="#practice" class="nav-link" data-translate="nav_practice">Practice</a>
-                <a href="#quiz" class="nav-link" data-translate="nav_quiz">Quiz</a>
-                <a href="#about" class="nav-link" data-translate="nav_about">About</a>
-                <button class="lang-switcher" onclick="toggleLanguage()">
-                    <span id="langText">TM</span>
-                </button>
+
+            <nav id="mainNav" class="flex items-center gap-4">
+                <button class="nav-link active" data-page="home" data-translate="nav_home">Home</button>
+                <button class="nav-link" data-page="basics" data-translate="nav_basics">Basics</button>
+                <button class="nav-link" data-page="tutorials" data-translate="nav_tutorials">Tutorials</button>
+                <button class="nav-link" data-page="advanced" data-translate="nav_advanced">Advanced</button>
+                <button class="nav-link" data-page="docs" data-translate="nav_docs">Docs</button>
+                <button class="nav-link" data-page="practice" data-translate="nav_practice">Practice</button>
+                <button class="nav-link" data-page="quiz" data-translate="nav_quiz">Quiz</button>
+                <button class="nav-link" data-page="about" data-translate="nav_about">About</button>
+
+
+                <!-- LANGUAGE & THEME CONTROLS -->
+                <div class="flex items-center gap-2 ml-4">
+                    <button class="lang-switcher" onclick="toggleLanguage()">
+                        <span id="langText">TM</span>
+                    </button>
+
+                    <button class="theme-switcher" onclick="toggleDarkMode()" aria-label="Toggle theme">
+                        <span id="darkModeIcon">🌙</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
 
+
+
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="page hero active">
+
         <h1 data-translate="hero_title">Web App Deployment Tutorial</h1>
         <p data-translate="hero_subtitle">Learn how to deploy your web applications to the cloud with step-by-step
             tutorials in English and Turkmen</p>
-        <a href="#basics" class="cta-button" data-translate="hero_cta">Start Learning</a>
+        <!-- <a href="#basics" class="cta-button" data-translate="hero_cta">Start Learning</a> -->
+        <button class="cta-button" onclick="navigateTo('basics')" data-translate="hero_cta">
+            Start Learning
+        </button>
+
+
+
+
+        <!-- Feature Cards -->
+        <div class="feature-cards ">
+            <div class="feature-card cursor-pointer" onclick="navigateToCourse('beginner')">
+                <h3 data-translate="feature_beginner_title">Beginner</h3>
+                <p data-translate="feature_beginner_desc">Start from the basics with simple, easy-to-follow tutorials
+                </p>
+            </div>
+
+            <div class="feature-card cursor-pointer" onclick="navigateToCourse('intermediate')">
+                <h3 data-translate="feature_intermediate_title">Intermediate</h3>
+                <p data-translate="feature_intermediate_desc">Advance your skills with real-world deployment scenarios
+                </p>
+            </div>
+
+            <div class="feature-card cursor-pointer" onclick="navigateToCourse('advanced')">
+                <h3 data-translate="feature_advanced_title">Advanced</h3>
+                <p data-translate="feature_advanced_desc">Master deployment with Docker, CI/CD, and cloud services</p>
+            </div>
+        </div>
+
+    </section>
+    <section id="basics" class="page basics-page">
+
+        <h2 class="section-title" data-translate="basics_title"></h2>
+
+        <div class="basics-grid">
+
+            <!-- What is Deployment -->
+            <div class="basics-card">
+                <h3 data-translate="basics_what_title"></h3>
+                <p data-translate="basics_what_content"></p>
+            </div>
+
+            <!-- Why Deployment -->
+            <div class="basics-card">
+                <h3 data-translate="basics_why_title"></h3>
+                <p data-translate="basics_why_content"></p>
+            </div>
+
+            <!-- Hosting -->
+            <div class="basics-card">
+                <h3 data-translate="basics_hosting_title"></h3>
+                <p data-translate="basics_hosting_content"></p>
+            </div>
+
+            <!-- Servers -->
+            <div class="basics-card">
+                <h3 data-translate="basics_servers_title"></h3>
+                <p data-translate="basics_servers_content"></p>
+            </div>
+
+            <!-- Domain & DNS -->
+            <div class="basics-card">
+                <h3 data-translate="basics_domain_title"></h3>
+                <p data-translate="basics_domain_content"></p>
+            </div>
+
+            <!-- Static vs Dynamic -->
+            <div class="basics-card">
+                <h3 data-translate="basics_static_title"></h3>
+                <p data-translate="basics_frontend_content"></p>
+                <p data-translate="basics_backend_content"></p>
+            </div>
+
+        </div>
     </section>
 
-    <!-- Feature Cards -->
-    <div class="feature-cards">
-        <div class="feature-card">
 
-            <h3 data-translate="feature_beginner_title">Beginner</h3>
-            <p data-translate="feature_beginner_desc">Start from the basics with simple, easy-to-follow tutorials</p>
-        </div>
-        <div class="feature-card">
 
-            <h3 data-translate="feature_intermediate_title">Intermediate</h3>
-            <p data-translate="feature_intermediate_desc">Advance your skills with real-world deployment scenarios</p>
-        </div>
-        <div class="feature-card">
 
-            <h3 data-translate="feature_advanced_title">Advanced</h3>
-            <p data-translate="feature_advanced_desc">Master deployment with Docker, CI/CD, and cloud services</p>
-        </div>
-    </div>
 
-    <!-- Deployment Basics Section -->
-    <section id="basics">
-        <h2 data-translate="basics_title">Deployment Basics</h2>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span><span data-translate="basics_what_title">What is Deployment?</span></span>
-
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_what_content">Deployment is the process of making your web application
-                    available on the internet so users can access it. It involves uploading your code to a server,
-                    configuring it properly, and ensuring it runs smoothly for all visitors.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span> <span data-translate="basics_why_title">Why Deploy Web Apps?</span></span>
-
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_why_content">Deploying web applications allows you to share your work with the
-                    world, reach users globally, and provide 24/7 accessibility. It's essential for businesses,
-                    portfolios, and any project meant for public use.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span><span data-translate="basics_hosting_title">Hosting</span></span>
-
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_hosting_content">Hosting is a service that stores your website files on
-                    powerful computers called servers. These servers are connected to the internet and make your website
-                    accessible to anyone, anywhere, at any time.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span><span data-translate="basics_servers_title">Servers</span></span>
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_servers_content">A server is a powerful computer that stores and delivers your
-                    website content to users. When someone types your website address, the server sends all the
-                    necessary files to their browser to display your site.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span> <span data-translate="basics_domain_title">Domain & DNS</span></span>
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_domain_content">A domain is your website's address (like example.com). DNS
-                    (Domain Name System) translates this human-readable address into an IP address that computers use to
-                    locate your server.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span><span data-translate="basics_static_title">Static vs Dynamic Websites</span></span>
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th data-translate="table_feature">Feature</th>
-                            <th data-translate="table_static">Static</th>
-                            <th data-translate="table_dynamic">Dynamic</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-translate="table_content">Content</td>
-                            <td data-translate="table_static_content">Fixed HTML/CSS/JS</td>
-                            <td data-translate="table_dynamic_content">Server-generated</td>
-                        </tr>
-                        <tr>
-                            <td data-translate="table_database">Database</td>
-                            <td data-translate="table_static_db">Not required</td>
-                            <td data-translate="table_dynamic_db">Usually required</td>
-                        </tr>
-                        <tr>
-                            <td data-translate="table_speed">Speed</td>
-                            <td data-translate="table_static_speed">Very fast</td>
-                            <td data-translate="table_dynamic_speed">Depends on server</td>
-                        </tr>
-                        <tr>
-                            <td data-translate="table_cost">Cost</td>
-                            <td data-translate="table_static_cost">Low</td>
-                            <td data-translate="table_dynamic_cost">Higher</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span><span data-translate="basics_frontend_title">Frontend vs Backend Deployment</span></span>
-                <span class="accordion-icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p data-translate="basics_frontend_content"><strong>Frontend:</strong> Deploying the user interface
-                    (HTML, CSS, JavaScript) that users see and interact with. Usually simpler and faster.</p>
-                <p data-translate="basics_backend_content"><strong>Backend:</strong> Deploying server-side code,
-                    databases, and APIs. Requires more configuration and resources.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Tutorials Section -->
-    <section id="tutorials">
+    <section id="tutorials" class="page">
         <h2 data-translate="tutorials_title">Step-by-Step Tutorials</h2>
 
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab(0)" data-translate="tab_frontend">Frontend
                 Deployment</button>
             <button class="tab-btn" onclick="switchTab(1)" data-translate="tab_backend">Backend Deployment</button>
+            <button class="tab-btn" onclick="switchTab(2)" data-translate="tab_common_problems">
+                Common Problems
+            </button>
+
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- Frontend Tutorials -->
         <div class="tab-content active">
@@ -212,7 +229,7 @@
 
                     <div class="code-block">
                         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <pre>&lt;!DOCTYPE html&gt;
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;My App&lt;/title&gt;
@@ -220,7 +237,7 @@
   &lt;body&gt;
     &lt;h1&gt;Hello World!&lt;/h1&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;</code></pre>
                     </div>
 
                     <div class="tutorial-step">
@@ -241,6 +258,52 @@
                             yoursite.netlify.app. You can customize it or add a custom domain.</p>
                     </div>
                 </div>
+                <div class="tutorial-card">
+                    <h3 data-translate="flutter_title">Deploy Flutter Web on Firebase Hosting</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="flutter_step1">Step 1: Enable Flutter Web</strong>
+                        <p data-translate="flutter_step1_desc">Make sure Flutter web support is enabled.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>flutter config --enable-web</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="flutter_step2">Step 2: Build Web Version</strong>
+                        <p data-translate="flutter_step2_desc">Create a production-ready web build.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>flutter build web</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="flutter_step3">Step 3: Install Firebase CLI</strong>
+                        <p data-translate="flutter_step3_desc">Install Firebase command-line tools.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>npm install -g firebase-tools</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="flutter_step4">Step 4: Deploy</strong>
+                        <p data-translate="flutter_step4_desc">Initialize Firebase hosting and deploy.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>firebase init
+firebase deploy</pre>
+                    </div>
+                </div>
+
+
 
                 <!-- Vercel Tutorial -->
                 <div class="tutorial-card">
@@ -367,6 +430,103 @@ app.listen(PORT, () => {
                             app with a free URL.</p>
                     </div>
                 </div>
+                <div class="tutorial-card">
+                    <h3 data-translate="laravel_title">Deploy Laravel on VPS (Ubuntu + Nginx)</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step1">Step 1: Install Required Packages</strong>
+                        <p data-translate="laravel_step1_desc">Install PHP, Composer, and Nginx on your server.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>sudo apt update
+sudo apt install nginx php php-cli php-fpm php-mysql unzip</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step2">Step 2: Install Composer</strong>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step3">Step 3: Upload Laravel Project</strong>
+                        <p data-translate="laravel_step3_desc">Clone your project from GitHub.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>git clone https://github.com/yourname/laravel-app.git
+cd laravel-app
+composer install</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step4">Step 4: Environment Setup</strong>
+                        <p data-translate="laravel_step4_desc">Configure .env and generate app key.</p>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>cp .env.example .env
+php artisan key:generate</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step5">Step 5: Configure Nginx</strong>
+                        <p data-translate="laravel_step5_desc">Point Nginx root to /public directory.</p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="laravel_step6">Step 6: Go Live</strong>
+                        <p data-translate="laravel_step6_desc">Your Laravel API is now accessible via your server IP or
+                            domain.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <h3 data-translate="docker_title">Deploy Backend with Docker</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="docker_step1">Step 1: Create Dockerfile</strong>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "start"]</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="docker_step2">Step 2: Build Docker Image</strong>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>docker build -t my-backend .</pre>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="docker_step3">Step 3: Run Container</strong>
+                    </div>
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <pre>docker run -p 3000:3000 my-backend</pre>
+                    </div>
+                </div>
+
+
+
 
                 <!-- Railway Tutorial -->
                 <div class="tutorial-card">
@@ -433,11 +593,49 @@ gunicorn==20.1.0</pre>
                     </div>
                 </div>
             </div>
+
+
+
         </div>
+        <div class="tab-content">
+            <div class="tutorial-grid">
+                <div class="tutorial-card">
+                    <h3 data-translate="problems_title">Common Deployment Problems</h3>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="problem_port_title">Port Not Open</strong>
+                        <p data-translate="problem_port_desc">
+                            Make sure firewall allows your app port.
+                        </p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="problem_env_title">
+                            Environment Variables Missing
+                        </strong>
+                        <p data-translate="problem_env_desc">
+                            Always check .env or platform environment settings.
+                        </p>
+                    </div>
+
+                    <div class="tutorial-step">
+                        <strong data-translate="problem_build_title">Build Failed</strong>
+                        <p data-translate="problem_build_desc">
+                            Check logs in deployment dashboard carefully.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </section>
 
+
+
     <!-- Advanced Topics Section -->
-    <section id="advanced">
+    <section id="advanced" class="page">
         <h2 data-translate="advanced_title">Advanced Concepts</h2>
 
         <div class="platform-grid">
@@ -504,7 +702,7 @@ CMD ["npm", "start"]</pre>
     </section>
 
     <!-- Documentation Section -->
-    <section id="docs">
+    <section id="docs" class="page">
         <h2 data-translate="docs_title">Complete Documentation</h2>
 
         <div class="doc-layout">
@@ -692,7 +890,7 @@ CMD ["npm", "start"]</pre>
     </section>
 
     <!-- Practice Tasks Section -->
-    <section id="practice">
+    <section id="practice" class="page">
         <h2 data-translate="practice_title">Hands-On Practice</h2>
 
         <ul class="task-list">
@@ -748,7 +946,7 @@ CMD ["npm", "start"]</pre>
     </section>
 
     <!-- Quiz Section -->
-    <section id="quiz">
+    <section id="quiz" class="page">
         <h2 data-translate="quiz_title">Test Your Knowledge</h2>
 
         <div class="quiz-container">
@@ -767,7 +965,7 @@ CMD ["npm", "start"]</pre>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="page">
         <h2 data-translate="about_title">About This Tutorial</h2>
 
         <div class="platform-grid">
@@ -822,6 +1020,79 @@ CMD ["npm", "start"]</pre>
             </div>
         </div>
     </section>
+    <section id="courses" class="page">
+       <div id="beginner-course" class="feature-card">
+
+    <h3 data-translate="feature_beginner_title">Beginner</h3>
+    <p data-translate="feature_beginner_desc">
+        Start from the basics with simple tutorials.
+    </p>
+
+    <h4 data-translate="beginner_section_1">What you will learn</h4>
+    <ul class="course-info">
+        <li data-translate="beginner_item_1">HTML fundamentals</li>
+        <li data-translate="beginner_item_2">CSS basics & layouts</li>
+        <li data-translate="beginner_item_3">JavaScript basics</li>
+    </ul>
+
+    <h4 data-translate="beginner_section_2">Deployment skills</h4>
+    <ul class="course-info">
+        <li data-translate="beginner_item_4">Deploy static sites</li>
+        <li data-translate="beginner_item_5">Domains & hosting basics</li>
+        <li data-translate="beginner_item_6">Fix common issues</li>
+    </ul>
+
+</div>
+<div id="intermediate-course" class="feature-card" style="display:none;">
+
+    <h3 data-translate="feature_intermediate_title">Intermediate</h3>
+    <p data-translate="feature_intermediate_desc">
+        Improve your skills and work with real-world projects.
+    </p>
+
+    <h4 data-translate="intermediate_section_1">What you will learn</h4>
+    <ul class="course-info">
+        <li data-translate="intermediate_item_1">Advanced CSS & layouts</li>
+        <li data-translate="intermediate_item_2">JavaScript DOM & APIs</li>
+        <li data-translate="intermediate_item_3">Basic backend concepts</li>
+    </ul>
+
+    <h4 data-translate="intermediate_section_2">Deployment skills</h4>
+    <ul class="course-info">
+        <li data-translate="intermediate_item_4">Deploy with Vercel</li>
+        <li data-translate="intermediate_item_5">Environment variables</li>
+        <li data-translate="intermediate_item_6">Debug deployment issues</li>
+    </ul>
+
+</div>
+
+
+
+<div id="advanced-course" class="feature-card" style="display:none;">
+
+    <h3 data-translate="feature_advanced_title">Advanced</h3>
+    <p data-translate="feature_advanced_desc">
+        Master deployment, backend, and production systems.
+    </p>
+
+    <h4 data-translate="advanced_section_1">What you will learn</h4>
+    <ul class="course-info">
+        <li data-translate="advanced_item_1">Fullstack architecture</li>
+        <li data-translate="advanced_item_2">Docker & containerization</li>
+        <li data-translate="advanced_item_3">CI/CD pipelines</li>
+    </ul>
+
+    <h4 data-translate="advanced_section_2">Production & scaling</h4>
+    <ul class="course-info">
+        <li data-translate="advanced_item_4">Deploy on VPS</li>
+        <li data-translate="advanced_item_5">Nginx & reverse proxy</li>
+        <li data-translate="advanced_item_6">Security & performance</li>
+    </ul>
+
+</div>
+
+    </section>
+
 
     <!-- Footer -->
     <footer>
